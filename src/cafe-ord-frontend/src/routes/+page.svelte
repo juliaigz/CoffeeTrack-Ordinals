@@ -1,19 +1,22 @@
 <script>
-  import "../index.scss";
-  import { backend } from "$lib/canisters";
+  // import "../index.scss";
+  import { Accordion, AccordionItem } from "carbon-components-svelte";
+  // import { backend } from "$lib/canisters";
 
   let greeting = "";
 
-  function onSubmit(event) {
-    const name = event.target.name.value;
-    backend.greet(name).then((response) => {
-      greeting = response;
-    });
-    return false;
-  }
+  // function onSubmit(event) {
+  //   const name = event.target.name.value;
+  //   backend.greet(name).then((response) => {
+  //     greeting = response;
+  //   });
+  //   return false;
+  // }
+
+  let open = false;
 </script>
 
-<main>
+<!-- <main>
   <img src="/logo2.svg" alt="DFINITY logo" />
   <br />
   <br />
@@ -23,4 +26,4 @@
     <button type="submit">Click Me!</button>
   </form>
   <section id="greeting">{greeting}</section>
-</main>
+</main> -->
