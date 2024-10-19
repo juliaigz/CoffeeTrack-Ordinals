@@ -20,6 +20,7 @@ target/
 node_modules/
 dist/
 .svelte-kit/
+package-lock.json
 
 # environment variables
 .env
