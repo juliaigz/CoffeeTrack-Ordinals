@@ -11,8 +11,6 @@ A blockchain-based platform for coffee bag traceability that leverages ICP for d
 5. **Certification**: ✅ Verifies compliance with organic and fair trade standards.
 6. **Export**: 🚢 Registers export details, including shipment and destination information.
 
-Let me know if you need any other changes!
-
 ## How to Start the Project
 
 ### Key Commands
