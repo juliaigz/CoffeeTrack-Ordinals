@@ -19,8 +19,8 @@
 
 <Header
   expansionBreakpoint={1700}
-  company="Ecofound"
-  platformName="ICP"
+  company="Coffee Track"
+  platformName="Icp x Stacks"
   bind:isSideNavOpen
   href="/"
 >
