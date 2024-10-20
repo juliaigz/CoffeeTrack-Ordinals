@@ -15,12 +15,13 @@
   let isSideNavOpen = false;
 
   let open = false;
+  // import logo from '../../static/image 18.png';
 </script>
 
 <Header
   expansionBreakpoint={1700}
   company="Coffee Track"
-  platformName="Icp x Stacks"
+  platformName=""
   bind:isSideNavOpen
   href="/"
 >
