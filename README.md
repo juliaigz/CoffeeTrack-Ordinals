@@ -2,6 +2,22 @@
 
 A blockchain-based platform for coffee bag traceability that leverages ICP for decentralized record management and Stacks to generate Bitcoin ordinals. The system tracks organic coffee production from cultivation to the export of green coffee, ensuring authenticity and transparency through verified certifications on the blockchain.
 
+## 🛠️ Architecture Overview
+
+The platform is designed using a microservices architecture with distinct canisters to handle different aspects of the system. Below is a high-level view of how the components interact:
+
+![Cafe-ord Architecture](https://cdn.discordapp.com/attachments/1295209682494816296/1297697238033895497/container-cafeord.png?ex=6716de3b&is=67158cbb&hm=bcf8ed125a4c9a15b3c25929dacbcea4f1c0166956901fd5600f793df3333584&)
+
+### System Components:
+
+1. **Producer (Person)**: The coffee producer, who inputs data about coffee cultivation and production.
+2. **Frontend (Canister)**: A user interface where producers and cooperatives can enter traceability data.
+3. **Backend (Canister)**: Manages business logic and stores traceability data. It also communicates with Stacks to generate Bitcoin ordinals for each batch of coffee.
+4. **CafeOrd Stacks (Container)**: Integrates with Stacks to create unique ordinals for every coffee lot.
+5. **QR Code Generator (Canister)**: Creates unique QR codes that point to traceability data stored on ICP.
+6. **Cooperative (Person)**: Validates and adds additional traceability data related to quality, certifications, and logistics.
+7. **Final Consumer (Person)**: Scans the QR code to access the traceability information and verify the authenticity of the coffee they purchase.
+
 ## 🌱 Traceability Phases
 
 1. **Cultivation**: 🌾 Records the origin, farm, and cultivation methods.
@@ -11,7 +27,7 @@ A blockchain-based platform for coffee bag traceability that leverages ICP for d
 5. **Certification**: ✅ Verifies compliance with organic and fair trade standards.
 6. **Export**: 🚢 Registers export details, including shipment and destination information.
 
-## How to Start the Project
+## 🚀 How to Start the Project
 
 ### Key Commands
 
