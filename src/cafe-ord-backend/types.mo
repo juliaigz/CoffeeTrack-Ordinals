@@ -15,16 +15,19 @@ module {
   public type Metadata = {
     title: ?Text;               // Título del activo (si es un NFT)
     description: ?Text;         // Descripción del activo
-    imageUrl: ?Text;            // URL de la imagen asociada
+    // imageUrl: ?Text;            // URL de la imagen asociada
     // additionalData: ?Record<Text, Text>; // Datos adicionales
   };
 
-  public type CultivationData = {
-    coffeeFarm : Text; // Nombre de la granja de café.
-    location : Text;    // Ubicación de la granja.
-    harvestDate : Nat64; // Fecha de la cosecha.
-    stacksOrdinal : StacksOrdinal; // Referencia al ordinal de Bitcoin.
-  };
+ public type CultivationData = {
+  producerName: Text;         // Nombre del productor.
+  harvestMethod: Text;        // Método de cosecha.
+  harvestDate: Nat64;         // Fecha de la cosecha (puede ser timestamp).
+  postHarvestTreatment: Text; // Tratamiento post cosecha.
+  coffeeOrigin: Text;         // Provenencia del café.
+  stacksOrdinal: StacksOrdinal; // Referencia al ordinal de Bitcoin.
+};
+
 
   public type CoffeeTraceability = {
     id : Nat;                     // Identificador único de la trazabilidad.
