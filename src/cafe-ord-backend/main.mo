@@ -8,7 +8,7 @@ type OrdinalNumber = Text;
 type CultivationData = {
   producerName: Text;         // Nombre del productor.
   harvestMethod: Text;        // Método de cosecha.
-  harvestDate: Nat64;         // Fecha de la cosecha (puede ser timestamp).
+  harvestDate: Text;         // Fecha de la cosecha (puede ser timestamp).
   postHarvestTreatment: Text; // Tratamiento post cosecha.
   coffeeOrigin: Text;         // Provenencia del café.
 };
