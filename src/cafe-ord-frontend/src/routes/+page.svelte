@@ -3,13 +3,8 @@
   import logoCaffe from "../lib/images/Coffe.png";
   import { Content, Grid, Row, Column } from "carbon-components-svelte";
   import { ProgressIndicator, ProgressStep } from "carbon-components-svelte";
-  import {
-    TextInput,
-    MultiSelect,
-    TextArea,
-    FileUploader,
-    Button,
-  } from "carbon-components-svelte";
+  import { backend } from "$lib/canisters.js";
+  import { TextInput, TextArea, Button } from "carbon-components-svelte";
   import { DatePicker, DatePickerInput } from "carbon-components-svelte";
   import {
     Form,
@@ -19,9 +14,60 @@
     Select,
     SelectItem,
   } from "carbon-components-svelte";
+  import { GroupObjects } from "carbon-icons-svelte";
 
-  let greeting = "";
-  let open = false;
+  function generateOrdinal() {
+    // Simulate a block height (e.g., 100,000 to 800,000 blocks)
+    const blockHeight =
+      Math.floor(Math.random() * (800000 - 100000 + 1)) + 100000;
+
+    // Simulate an index within the block (e.g., 0 to 10,000 transactions in a block)
+    const index = Math.floor(Math.random() * 10000);
+
+    return `${blockHeight}:${index}`;
+  }
+
+  import { goto } from "$app/navigation"; // Asegúrate de importar 'goto' desde SvelteKit
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+
+    const formData = {
+      producerName,
+      harvestMethod,
+      harvestDate,
+      postHarvestTreatment,
+      coffeeOrigin,
+    };
+
+    // Llamada al backend para agregar la información de la cosecha
+    await backend.addCultivation(generateOrdinal(), formData).then((res) => {
+      console.log(res);
+    });
+
+    // Llamada al backend para mostrar las cosechas
+    await backend.showCultivations().then((res) => {
+      console.log(res);
+    });
+
+    // Redirección a la ruta /ordinal usando SvelteKit's goto
+    goto("/ordinals");
+  };
+  //
+
+  // function onSubmit(event) {
+  //   const name = event.target.name.value;
+  // backend.greet(name).then((response) => {
+  //     greeting = response;
+  //   });
+  //   return false;
+  // }
+
+  let producerName = "Luz Maria";
+  let harvestMethod = "Organico";
+  let harvestDate = "11/04/2024";
+  let postHarvestTreatment = "Fermentado";
+  let coffeeOrigin = "Parcela 002 de Finca Luz";
 </script>
 
 <Grid>
@@ -47,9 +93,13 @@
       width: 100%;
       height: 140vh;"
     >
-      <Form on:submit>
+      <Form on:submit={handleSubmit}>
         <div class="setName">
-          <TextInput labelText="Nombre del productor" placeholder="Nombre" />
+          <TextInput
+            bind:value={producerName}
+            labelText="Nombre del productor"
+            placeholder="Nombre"
+          />
         </div>
 
         <FormGroup
@@ -60,20 +110,20 @@
           <p>Metodo de cultivo</p>
           <RadioButtonGroup
             name="radio-button-group"
-            selected="default-selected"
+            bind:value={harvestMethod}
             style="margin-top: 1.43em;"
           >
-            <RadioButton id="radio-1" value="standard" labelText="Orgánico" />
+            <RadioButton id="radio-1" value="Organico" labelText="Orgánico" />
             <RadioButton
               id="radio-2"
-              value="default-selected"
+              value="Convencional"
               labelText="Convencional"
             />
           </RadioButtonGroup>
         </FormGroup>
 
         <FormGroup>
-          <DatePicker datePickerType="single">
+          <DatePicker bind:value={harvestDate} datePickerType="single">
             <DatePickerInput
               labelText="¿En que fecha se cosechará el café?"
               placeholder="mm/dd/yyyy"
@@ -84,6 +134,7 @@
         <FormGroup>
           <Select
             id="select-1"
+            bind:value={postHarvestTreatment}
             labelText="¿Que tratamiento post-cosecha utilizaste?"
           >
             <SelectItem
@@ -92,14 +143,15 @@
               value="placeholder-item"
               text="Elije una opción"
             />
-            <SelectItem value="option-1" text="Lavado" />
-            <SelectItem value="option-2" text="Secado" />
-            <SelectItem value="option-3" text="Fermentado" />
+            <SelectItem value="Lavado" text="Lavado" />
+            <SelectItem value="Secado" text="Secado" />
+            <SelectItem value="Fermentado" text="Fermentado" />
           </Select>
         </FormGroup>
 
         <FormGroup>
           <TextArea
+            bind:value={coffeeOrigin}
             labelText="¿De qué parcela o sección de la finca proviene este lote de café?"
             placeholder="Enter a description..."
             maxCount={100}
