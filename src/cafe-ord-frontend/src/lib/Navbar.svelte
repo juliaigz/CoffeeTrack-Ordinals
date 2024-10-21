@@ -29,9 +29,8 @@
     <SkipToContent />
   </svelte:fragment>
   <HeaderNav>
-    <HeaderNavItem href="/" text="About" />
-    <HeaderNavItem href="/" text="Help" />
-    <HeaderNavItem href="/" text="Start a project" />
+    <HeaderNavItem href="/ordinals" text="Explorer" />
+    <HeaderNavItem href="/" text="Add data" />
   </HeaderNav>
   <HeaderUtilities>
     <HeaderGlobalAction
