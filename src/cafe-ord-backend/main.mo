@@ -49,4 +49,8 @@ type CultivationData = {
   public func removeCultivationById(ordinalNumber : OrdinalNumber) : async ?CultivationData {
     return cultivationStorage.remove(ordinalNumber);
   };
+
+  public shared (msg) func whoami() : async Principal {
+    msg.caller;
+  };
 };

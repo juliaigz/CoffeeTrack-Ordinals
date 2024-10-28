@@ -12,6 +12,8 @@
     HeaderGlobalAction,
   } from "carbon-components-svelte";
   import { UserAvatarFilledAlt } from "carbon-icons-svelte";
+  import InternetIdentity from "$lib/connect/InternetIdentity.svelte";
+  import IdentityTool from "./connect/IdentityTool.svelte";
   let isSideNavOpen = false;
 
   let open = false;
@@ -33,11 +35,13 @@
     <HeaderNavItem href="/" text="Add data" />
   </HeaderNav>
   <HeaderUtilities>
-    <HeaderGlobalAction
+    <!-- <HeaderGlobalAction
       on:click={() => (open = true)}
       iconDescription="Profile"
       icon={UserAvatarFilledAlt}
-    />
+    /> -->
+    <InternetIdentity />
+    <!-- <IdentityTool /> -->
   </HeaderUtilities>
 </Header>
 
