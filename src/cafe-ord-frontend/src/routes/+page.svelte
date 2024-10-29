@@ -99,6 +99,7 @@
             bind:value={producerName}
             labelText="Nombre del productor"
             placeholder="Nombre"
+            required
           />
         </div>
 
@@ -112,18 +113,20 @@
             name="radio-button-group"
             bind:value={harvestMethod}
             style="margin-top: 1.43em;"
+            required
           >
             <RadioButton id="radio-1" value="Organico" labelText="Orgánico" />
             <RadioButton
               id="radio-2"
               value="Convencional"
               labelText="Convencional"
+    
             />
           </RadioButtonGroup>
         </FormGroup>
 
         <FormGroup>
-          <DatePicker bind:value={harvestDate} datePickerType="single">
+          <DatePicker bind:value={harvestDate} datePickerType="single" required>
             <DatePickerInput
               labelText="¿En que fecha se cosechará el café?"
               placeholder="mm/dd/yyyy"
@@ -131,17 +134,19 @@
           </DatePicker>
         </FormGroup>
 
-        <FormGroup>
+        <FormGroup required>
           <Select
             id="select-1"
             bind:value={postHarvestTreatment}
             labelText="¿Que tratamiento post-cosecha utilizaste?"
+        
           >
             <SelectItem
               disabled
               hidden
               value="placeholder-item"
               text="Elije una opción"
+              required
             />
             <SelectItem value="Lavado" text="Lavado" />
             <SelectItem value="Secado" text="Secado" />
