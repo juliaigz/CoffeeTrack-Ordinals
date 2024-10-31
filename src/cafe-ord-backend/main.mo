@@ -44,6 +44,16 @@ type CultivationData = {
     };
   };
 
+//   public shared func addCultivations(ordinalNumber : OrdinalNumber, cultivationData : CultivationData) : async () {
+//   let existingCultivation = cultivationStorage.get(ordinalNumber);
+//   let res = await send_http_post_request();
+//   if (existingCultivation == null) {
+//     Debug.print(debug_show (res));
+//     cultivationStorage.put(ordinalNumber, cultivationData);
+//     // return ?res;
+//   };
+// };
+
   // Función para actualizar un cultivo existente por su OrdinalNumber
   public func updateCultivationById(ordinalNumber : OrdinalNumber, cultivationData : CultivationData) : async ?CultivationData {
     let existingCultivation = cultivationStorage.get(ordinalNumber);
