@@ -11,9 +11,7 @@
     SkipToContent,
     HeaderGlobalAction,
   } from "carbon-components-svelte";
-  import { UserAvatarFilledAlt } from "carbon-icons-svelte";
   import InternetIdentity from "$lib/connect/InternetIdentity.svelte";
-  import IdentityTool from "./connect/IdentityTool.svelte";
   let isSideNavOpen = false;
 
   let open = false;
