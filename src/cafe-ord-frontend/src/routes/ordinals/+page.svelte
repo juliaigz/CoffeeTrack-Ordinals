@@ -78,7 +78,7 @@
     <div class="boxImage">
       <img src={IconoCafe} alt="Icono de Café">
     </div>
-    <p>{"480153:7968"}</p>
+    <p><a href="https://ordinals.hiro.so/inscription/d9d1cb764a70924657381f7042842749201d97749eef6c75dad31f85b8440eaai0">{"d9d1cb764a70924657381f7042842749201d97749eef6c75dad31f85b8440eaai0"}</a></p>
     <br />
     
     <div class="TextInput">
