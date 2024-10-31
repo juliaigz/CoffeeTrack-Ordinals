@@ -6,7 +6,7 @@ A blockchain-based platform for coffee bag traceability that leverages ICP for d
 
 The platform is designed using a microservices architecture with distinct canisters to handle different aspects of the system. Below is a high-level view of how the components interact:
 
-![Cafe-ord Architecture](https://cdn.discordapp.com/attachments/1295209682494816296/1297697238033895497/container-cafeord.png?ex=6716de3b&is=67158cbb&hm=bcf8ed125a4c9a15b3c25929dacbcea4f1c0166956901fd5600f793df3333584&)
+![Cafe-ord Architecture](https://cdn.discordapp.com/attachments/1295209682494816296/1301544929452883968/image.png?ex=6724ddac&is=67238c2c&hm=ea46cc1da09889c2b8f70e490175f1a676d48d57b5863b8afcfb1ef9afdfde6f&)
 
 ### System Components:
 
